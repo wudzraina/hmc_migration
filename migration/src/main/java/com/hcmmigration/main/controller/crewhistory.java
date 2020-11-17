@@ -19,26 +19,26 @@ public class crewhistory {
 	@GetMapping(value="hcmmigration/api/v1.0/crewhistory")
 	public String getMethodName()
 	{
-	
+
 		// ch_csv cv = new ch_csv();
-		
-		com.hcmmigration.main.model.crewhistory model = new com.hcmmigration.main.model.crewhistory();		
+
+		com.hcmmigration.main.model.crewhistory model = new com.hcmmigration.main.model.crewhistory();
 		String json = model.toString() ;//+ " " + cv.toString() ;
 		return json;
 
 	}
-	
+
 	@GetMapping("hcmmigration/api/v1.0/crewhistory/download")
 	public void downloadCSV(HttpServletResponse response) throws IOException
 	{
 		response.setContentType("text/csv");
 		response.setHeader("Content-Disposition", "attachment; file=customers.csv");
-		
+
 		// List<Crewhistory> customers = (List<Crewhistory>) customerRepository.findAll();
-		
+
 		// Using method 1 ->
 		// WriteDataToCSV.writeDataToCsvUsingStringArray(response.getWriter(), customers);
-		
+
 		// Using method 2 ->
 		// WriteDataToCSV.writeDataToCsvWithListObjects(response.getWriter(), customers);
 	}
